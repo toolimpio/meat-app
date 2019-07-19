@@ -9,7 +9,13 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
 import {ROUTES} from "./app.routes";
-import { RestaurantsComponent } from './restaurants/restaurants.component'
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantComponent } from "app/restaurants/restaurant/restaurant.component";
+import { RestaurantsService } from "app/restaurants/restaurant/restaurants.service";
+import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
+import { MenuComponent } from "app/restaurant-detail/menu/menu.component";
+import { ShoppingCartComponent } from "app/restaurant-detail/shopping-cart/shopping-cart.component";
+import { MenuItemComponent } from "app/restaurant-detail/menu-item/menu-item.component";
 
 @NgModule({
   declarations: [
@@ -17,14 +23,19 @@ import { RestaurantsComponent } from './restaurants/restaurants.component'
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    RestaurantsComponent
+    RestaurantsComponent,
+    RestaurantComponent,
+    RestaurantDetailComponent,
+    MenuComponent,
+    ShoppingCartComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [RestaurantsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
