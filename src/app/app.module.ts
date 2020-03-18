@@ -13,8 +13,10 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
 import { MenuComponent } from "app/restaurant-detail/menu/menu.component";
 import { ShoppingCartComponent } from "app/restaurant-detail/shopping-cart/shopping-cart.component";
 import { MenuItemComponent } from "app/restaurant-detail/menu-item/menu-item.component";
-import { RestaurantsService } from "app/restaurants/restaurants.service";
 import { RewiewsComponent } from "app/restaurant-detail/rewiews/rewiews.component";
+
+import { RestaurantsService } from "app/restaurants/restaurants.service";
+import { ShoppingCartService } from "app/restaurant-detail/shopping-cart/shopping-cart.service";
 
 import {ROUTES} from "./app.routes";
 
@@ -37,7 +39,7 @@ import {ROUTES} from "./app.routes";
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantsService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [RestaurantsService, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
