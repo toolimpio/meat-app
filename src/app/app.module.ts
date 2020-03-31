@@ -16,11 +16,18 @@ import { ShoppingCartComponent } from "app/restaurant-detail/shopping-cart/shopp
 import { MenuItemComponent } from "app/restaurant-detail/menu-item/menu-item.component";
 import { RewiewsComponent } from "app/restaurant-detail/rewiews/rewiews.component";
 import { OrderComponent } from 'app/order/order.component';
+import { OrderItemsComponent } from 'app/order/order-items/order-items.component';
+import { DeliveryCostsComponent } from 'app/order/delivery-costs/delivery-costs.component';
+import { OrderSummaryComponent } from 'app/order-summary/order-summary.component';
+import { InputComponent } from 'app/shared/input/input.component'
+import { RadioComponent } from 'app/shared/radio/radio.component';
+import { RatingComponent } from 'app/shared/rating/rating.component';
 
 import { RestaurantsService } from "app/restaurants/restaurants.service";
 import { ShoppingCartService } from "app/restaurant-detail/shopping-cart/shopping-cart.service";
+import { OrderService } from './order/order.service';
 
-import {ROUTES} from "./app.routes";
+import { ROUTES } from "./app.routes";
 
 @NgModule({
   declarations: [
@@ -35,7 +42,13 @@ import {ROUTES} from "./app.routes";
     ShoppingCartComponent,
     MenuItemComponent,
     RewiewsComponent,
-    OrderComponent
+    OrderComponent,
+    OrderItemsComponent,
+    DeliveryCostsComponent,
+    OrderSummaryComponent,
+    InputComponent,
+    RadioComponent,    
+    RatingComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +56,7 @@ import {ROUTES} from "./app.routes";
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantsService, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [RestaurantsService, ShoppingCartService, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

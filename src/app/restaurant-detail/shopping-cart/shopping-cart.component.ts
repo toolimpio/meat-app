@@ -12,15 +12,15 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() { }
 
   itens(): any[] {
-    return this.shoppingCartService.itens
+    return this.shoppingCartService.items;
   }
 
   addItem(item: any) {
-    this.shoppingCartService.addItem(item)
+    this.shoppingCartService.addItem(item);
   }
 
   removeItem(item: any) {
-    this.shoppingCartService.removeItem(item)
+    this.shoppingCartService.removeItem(item);
   }
 
   clear() {
